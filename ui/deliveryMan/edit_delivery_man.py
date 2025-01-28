@@ -31,7 +31,14 @@ def page_update_delivery_man(self, delivery_man_id):
     self.update_vehicle_dropdown.grid(row=1, column=1, padx=10, pady=10, sticky='w')
 
     # Update Button
-    tk.Button(
+    ttk.Button(
         page, text="Update Delivery Man", 
         command=lambda: update_delivery_man(self, delivery_man_id)
     ).grid(row=5, column=0, columnspan=3, pady=20)
+    # Cancel Button
+    ttk.Button(page, text="Cancel", 
+                command=lambda: cancle(self)).grid(row=5, column=2, columnspan=3, pady=20)
+    
+def cancle(self): 
+    # Return to the main page
+    self.notebook.forget(self.notebook.index("current"))

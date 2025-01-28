@@ -96,10 +96,17 @@ def page_update_work_record(self, work_record):
         path = filedialog.askopenfilename(filetypes=[("Image files", "*.jpg *.png *.jpeg")])
         self.update_photo_path_var.set(path)
 
-    tk.Button(page, text="Choose Photo", command=select_photo).grid(row=5, column=2, padx=10, pady=10)
+    ttk.Button(page, text="Choose Photo", command=select_photo).grid(row=5, column=2, padx=10, pady=10)
 
 
     # Update Button
-    tk.Button(page, text="Update Work Record", 
+    ttk.Button(page, text="Update Work Record", 
               command=lambda: update_work_record(self, work_record_id)).grid(
         row=7, column=0, columnspan=3, pady=20)
+    # Cancel Button
+    ttk.Button(page, text="Cancel", 
+                command=lambda: cancle(self)).grid(row=7, column=2, columnspan=3, pady=20)
+    
+def cancle(self): 
+    # Return to the main page
+    self.notebook.forget(self.notebook.index("current"))

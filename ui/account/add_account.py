@@ -4,7 +4,7 @@ from .Account import add_account
 
 def page_add_account(self):
     page = tk.Frame(self.notebook)
-    self.notebook.add(page, text="Add Account")
+    self.notebook.add(page, text="Add Account +")
     # self.notebook.select(page)
     form_labels = ["Email:","Password:", "Place:"]
     self.account_form = {}

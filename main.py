@@ -21,7 +21,7 @@ class DeliveryERMApp:
         setup_database(self)
         
         self.root.title("Delivery Management System")
-        self.window_width = 800
+        self.window_width = 1000
         self.window_height = 600
         self.screen_width = root.winfo_screenwidth()
         self.screen_height = root.winfo_screenheight()

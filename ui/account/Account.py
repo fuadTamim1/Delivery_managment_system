@@ -68,8 +68,11 @@ def update_account(self, account_id):
         messagebox.showerror("Error", "All fields are required!")
         return
 
-    a.update(email, password, place, account_id)
-    
+    if is_valid_email(email):
+        a.update(email, password, place, account_id)
+    else:
+        messagebox.showerror("Error", "Invalid email!")
+        return
     messagebox.showinfo("Success", "Account updated successfully!")
 
     # Return to the main page

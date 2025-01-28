@@ -147,6 +147,7 @@ def filter_work_records(user_search, start_date=None, end_date=None):
     conn.close()
     return result
 
+
 def get_data_to_export():
     conn = get_connection()
     cursor = conn.cursor()
@@ -154,9 +155,11 @@ def get_data_to_export():
     # Query all work records data from the database
     cursor.execute(
         """
-        SELECT id, delivery_man_id, account_id, orders_count, tips, date, 
-            shift_from || ' - ' || shift_to AS shift
-        FROM work_records
+        SELECT wr.id, dm.name AS delivery_man_name, ac.email AS account, wr.tips, wr.orders_count, wr.date, 
+               wr.shift_from || ' - ' || wr.shift_to AS shift 
+        FROM work_records wr
+        JOIN delivery_men dm ON wr.delivery_man_id = dm.id
+        JOIN accounts ac ON wr.account_id = ac.id
     """
     )
     result = cursor.fetchall()

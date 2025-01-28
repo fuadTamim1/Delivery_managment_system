@@ -4,7 +4,7 @@ from .DeliveryMan import add_delivery_man, vehicle_types
 
 def page_add_delivery_man(self):
     page = ttk.Frame(self.notebook)
-    self.notebook.add(page, text="Add Delivery Man")
+    self.notebook.add(page, text="Add Delivery Man +")
 
     # First Field: Name
     tk.Label(page, text="Name:").grid(row=0, column=0, padx=10, pady=10, sticky='e')

@@ -3,3 +3,7 @@ __pycache__/
 env/
 .vscode/
 .DS_Store
+exports/
+media/
+delivery_management.db
+delivery_system.zip

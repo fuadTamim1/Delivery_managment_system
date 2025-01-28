@@ -10,7 +10,7 @@ from tkcalendar import DateEntry
 def page_add_work_record(self):
     """Create the UI for adding work records."""
     page = ttk.Frame(self.notebook)
-    self.notebook.add(page, text="Add Work Record")
+    self.notebook.add(page, text="Add Work Record +")
     
     
     self.delivery_names = get_delivery_men_names()  # Get delivery man names
